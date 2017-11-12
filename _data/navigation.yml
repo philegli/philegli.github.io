@@ -1,5 +1,10 @@
 # Site navigation links
 
+- title: Tutorials
+  url: /tutorials/
+  excerpt: "Stuff."
+  image: rpi.png
+
 - title:
   url:
   excerpt:
