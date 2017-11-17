@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Getting started with a Raspberry PI"
+title: "Getting started with a Raspberry Pi"
 categories: tutorials
 excerpt: "Installing raspbian"
 ads: false
@@ -9,11 +9,11 @@ image:
   teaser: rpi2.png
 ---
 
-I've had a number of Raspberry PIs for years now and they're great. I recently managed to corrupt one of the SD cards so I thought I'll document the process of getting the PI back up and running.
+I've had a number of Raspberry Pis for years now and they're great. I recently managed to corrupt one of the SD cards so I thought I'll document the process of getting the Pi back up and running.
 
 ## 1) Downloading Raspbian
 
-Go to the [official repository](https://www.raspberrypi.org/downloads/raspbian/) and download the latest Raspbian image. I usually go for the lightweight option as I don't usually connect my Raspberry PIs up to a screen via the HDMI output and use a keyboard + mouse etc.
+Go to the [official repository](https://www.raspberrypi.org/downloads/raspbian/) and download the latest Raspbian image. I usually go for the lightweight option as I don't usually connect my Raspberry Pis up to a screen via the HDMI output and use a keyboard + mouse etc.
 
 ## 2) Writing Raspbian to an SD card
 
@@ -31,7 +31,7 @@ One piece of advise though...before flashing the image to the SD, take one last 
 
 ## 3) Enabling SSH
 
-Once last step before booting up the Raspberry PI with the new SD. As we'll be connecting to the Pi remotely, we'll have to make sure SSH is enabled. By default, SSH is disabled. To enable it, you can add a blank file called "SSH" to the root of the SD card. This can be done in many ways although I just used ```touch``` from the command line.
+Once last step before booting up the Raspberry Pi with the new SD. As we'll be connecting to the Pi remotely, we'll have to make sure SSH is enabled. By default, SSH is disabled. To enable it, you can add a blank file called "SSH" to the root of the SD card. This can be done in many ways although I just used ```touch``` from the command line.
 
 ![_config.yml]({{ site.baseurl }}/images/installing_raspbian/touch.png)
 
@@ -40,7 +40,7 @@ The SD card is now ready.
 
 ## 4) Booting up time!
 
-To boot up the Raspberry PI, first connect the ethernet cable to either a router or other network device and then connect the power.
+To boot up the Raspberry Pi, first connect the ethernet cable to either a router or other network device and then connect the power.
 
 Soon after, the Raspberry Pi should be up and running.
 
@@ -52,19 +52,21 @@ To connect to it we of course need to figure out its IP. In my case, I just look
 ![_config.yml]({{ site.baseurl }}/images/installing_raspbian/ip.png)
 
 
-## 6) Connecting to the Raspberry PI
+## 6) Connecting to the Raspberry Pi
 
-Finally we can connect to the Raspberry PI.
+Finally we can connect to the Raspberry Pi.
 
 Using SSH directly from the terminal or using Putty if you're on Windows, establish a connection using username pi and password raspberry.
 
-```ssh pi@10.10.1.88```
+```
+ssh pi@10.10.1.88
+```
 
 You'll probably get a message such as: The authenticity of host '10.10.1.88 (10.10.1.88)' can't be established and an ECDSA key fingerprint. For now this can be ignored with "yes".
 
 Currently this is quite a vulnerable set-up as it's still using the default username and password so it's time to change this.
 
-## 7) Configuring the Raspberry PI
+## 7) Configuring the Raspberry Pi
 
 It's time to carry out some final configuration before doing fun stuff.
 Run the configuration utility: ```sudo raspi-config```
@@ -89,6 +91,6 @@ The following dialog should pop up:
 
 8,9 N/A
 
-For some of the options to take effect, choose to reboot the Raspberry PI.
+For some of the options to take effect, choose to reboot the Raspberry Pi.
 
 ![_config.yml]({{ site.baseurl }}/images/installing_raspbian/config3.png)
